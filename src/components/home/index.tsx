@@ -13,6 +13,10 @@ export class Home extends React.Component<HomeProps, HomeStates> {
         plus: this.props.plus
     }
 
+    componentDidMount() {
+        console.log(1);
+    }
+
     static getDerivedStateFromProps(nextProps: HomeProps, prevstate: HomeStates) {
         console.log("子组件的getDerived===>", nextProps, prevstate);
         if (nextProps.num !== prevstate.num) {
@@ -23,6 +27,11 @@ export class Home extends React.Component<HomeProps, HomeStates> {
         return null;
     }
 
+
+    componentDidUpdate() {
+        console.log(2);
+    }
+    
     render() {
         return (
             <div>
