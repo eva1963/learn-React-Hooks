@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
+import { Home } from "./components/home";
 
-class App extends Component {
+interface Appstates {
+  num: number;
+}
+class App extends Component<{},Appstates> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      num: 0
+    }
+  }
+
+  // componentWillMount() {
+  //   console.log("componentWillMount");
+  // }
+
+  // UNSAFE_componentWillMount() {
+  //   console.log("unsafe====>");
+  // }
+
+  plus = () => {
+    this.setState({
+      num: this.state.num + 1
+    },() => {console.log(this.state.num);
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        {/* <h1>{this.state.num}</h1> */}
+        <Home num={this.state.num}
+         plus={this.plus}/>
+        {/* <button onClick={this.plus}>plus 1</button> */}
       </div>
     );
   }
