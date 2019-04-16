@@ -34,7 +34,8 @@ class App extends Component<{},Appstates> {
       <div className="App">
         {/* <h1>{this.state.num}</h1> */}
         <Home num={this.state.num}
-         plus={this.plus}/>
+         plus={this.plus}
+         />
         {/* <button onClick={this.plus}>plus 1</button> */}
       </div>
     );
