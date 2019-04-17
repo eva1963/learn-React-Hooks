@@ -17,21 +17,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "format": "prettier --write",
-    "commit": "lint-staged"
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.{json,css,md,scss}": [
-      "format",
+      "prettier --write",
       "git add"
     ],
     "*.scss": [
-      "stylelint --fix --syntax scss",
+      "yarn lint:css",
       "format",
       "git add"
     ],
     "*.{ts,tsx}": [
-      "tslint",
-      "format",
+      "prettier --write",
       "git add"
     ]
   },
