@@ -31,12 +31,14 @@ export class Home extends React.Component<HomeProps, HomeStates> {
     componentDidUpdate() {
         console.log(2);
     }
-    
+
     render() {
         return (
             <div>
                 <div>{this.state.num}</div>
-                <button onClick={this.props.plus}>plus 1</button>
+                <button onClick={this.props.plus}>
+                plus 1
+                </button>
             </div>
         );
     }
