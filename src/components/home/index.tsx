@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 interface HomeProps {
   num: number;
@@ -8,16 +8,10 @@ interface HomeProps {
 interface HomeStates extends HomeProps {}
 
 export class Home extends React.Component<HomeProps, HomeStates> {
-  state = {
-    num: this.props.num,
-    plus: this.props.plus
-  };
-
-  componentDidMount() {
-    console.log(1);
-  }
-
-  static getDerivedStateFromProps(nextProps: HomeProps, prevstate: HomeStates) {
+  public static getDerivedStateFromProps(
+    nextProps: any,
+    prevstate: HomeStates
+  ) {
     console.log("子组件的getDerived===>", nextProps, prevstate);
     if (nextProps.num !== prevstate.num) {
       return {
@@ -26,12 +20,20 @@ export class Home extends React.Component<HomeProps, HomeStates> {
     }
     return null;
   }
+  public state = {
+    num: this.props.num,
+    plus: this.props.plus
+  };
 
-  componentDidUpdate() {
+  public componentDidMount() {
+    console.log(1);
+  }
+
+  public componentDidUpdate() {
     console.log(2);
   }
 
-  render() {
+  public render() {
     return (
       <div>
         <div>{this.state.num}</div>
