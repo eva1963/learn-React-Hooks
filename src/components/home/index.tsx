@@ -39,7 +39,6 @@ export class Home extends React.Component<HomeProps, HomeStates> {
                 <button onClick={this.props.plus}>
                 1
                 
-                
                 plus 1
                 </button>
             </div>
