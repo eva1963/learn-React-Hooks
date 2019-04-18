@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import "./App.scss";
 import { Home } from "./components/home";
 import { Child } from "./components/child";
@@ -7,13 +7,12 @@ import { NewChild } from "./components/NewChild";
 interface Appstates {
   num: number;
 }
-class App extends Component<{},Appstates> {
-
+class App extends React.Component<{}, Appstates> {
   constructor(props: any) {
     super(props);
     this.state = {
       num: 0
-    }
+    };
   }
 
   // componentWillMount() {
@@ -29,7 +28,7 @@ class App extends Component<{},Appstates> {
       this.setState({
         num: this.state.num + 1
       });
-    }, 1000)
+    }, 1000);
   }
 
   plus = () => {
@@ -38,15 +37,15 @@ class App extends Component<{},Appstates> {
     // },() => {console.log(this.state.num);
     // })
     console.log("plus");
-  }
+  };
 
   render() {
     return (
       <div className="App">
         {/* <h1>{this.state.num}</h1> */}
-        <Home num={this.state.num} plus={this.plus}/>
+        <Home num={this.state.num} plus={this.plus} />
         {/* <Child/> */}
-      {/* <NewChild/> */}
+        {/* <NewChild/> */}
 
         {/* <button onClick={this.plus}>plus 1</button> */}
       </div>
