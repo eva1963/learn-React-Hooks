@@ -2,3 +2,10 @@ h1 {
   background: #eee;
   font-size: 15px;
 }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

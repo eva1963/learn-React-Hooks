@@ -26,13 +26,12 @@
       "git add"
     ],
     "*.scss": [
-      "yarn lint:css",
-      "format",
+      "npm run format",
       "git add"
     ],
     "*.{js,jsx}": [
       "eslint",
-      "format",
+      "npm run format",
       "git add"
     ],
     "*.{ts,tsx}": [
