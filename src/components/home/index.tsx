@@ -5,13 +5,8 @@ interface HomeProps {
   plus: () => void;
 }
 
-interface HomeStates extends HomeProps {}
-
-export class Home extends React.Component<HomeProps, HomeStates> {
-  public static getDerivedStateFromProps(
-    nextProps: any,
-    prevstate: HomeStates
-  ) {
+export class Home extends React.Component<HomeProps, {}> {
+  static getDerivedStateFromProps(nextProps: any, prevstate: any) {
     console.log("子组件的getDerived===>", nextProps, prevstate);
     if (nextProps.num !== prevstate.num) {
       return {
@@ -20,20 +15,20 @@ export class Home extends React.Component<HomeProps, HomeStates> {
     }
     return null;
   }
-  public state = {
+  state = {
     num: this.props.num,
     plus: this.props.plus
   };
 
-  public componentDidMount() {
+  componentDidMount() {
     console.log(1);
   }
 
-  public componentDidUpdate() {
+  componentDidUpdate() {
     console.log(2);
   }
 
-  public render() {
+  render() {
     return (
       <div>
         <div>{this.state.num}</div>
